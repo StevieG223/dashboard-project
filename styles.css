@@ -31,10 +31,21 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 /* reset complete */
 
+body{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+} 
+
+.p{
+    font-size: calc(16px + 1vw);
+    line-height: calc(1.1em + 0.5vw);
+}
+
 .container{
     display: grid;
     grid-template-columns: 1fr 5fr;
-    grid-template-rows: 1fr 1fr 5fr 1fr;
+    grid-template-rows: 1fr 1fr 5fr 1fr 1fr;
 }
 
 .sidebar{
@@ -42,7 +53,7 @@ p, h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     background-color: #65a30d;
     grid-column: 1 / 2;
-    grid-row: 1 / 5;
+    grid-row: 1 / -1;
     gap: 40px;
 }
 .sidebar ul{
@@ -78,6 +89,7 @@ ul li svg{
     background-color: #f7fee7;
     display: flex;
     justify-content: space-between;
+    height: min(100px);
 }
 
 
@@ -114,6 +126,7 @@ ul li svg{
     flex-direction: row;
     justify-content: space-between;
     box-shadow: 0px 25px 20px 8px rgba(0,0,0,0.1);
+    height: min(100px);
 }
 
 .menu .greeting{
@@ -142,8 +155,14 @@ ul li svg{
     background-color: #65a30d;
     color: #f7fee7;
     border: 0px;
+    flex-grow: 0;
+    height: 30px;
 }
 
+.buttons{
+    display: flex;
+    flex-wrap: nowrap;
+}
 
 .menu button:hover{
     background-color: #bef264;
@@ -172,7 +191,9 @@ ul li svg{
 }
 
 .title{
+    padding: 30px 0px 5px 0px;
     font-weight: bold;
+    color: #365314;
 }
 
 .job-board .job-card{
@@ -190,6 +211,9 @@ ul li svg{
 .job-board .icons svg{
     flex-grow: 0;
     width: 30px;
+    &:hover{
+        transform: scale(1.05);
+    }
 }
 
 .job-board .icons{
@@ -210,8 +234,8 @@ ul li svg{
     grid-row: 1 /2;
 }
 
-.job-board-sidebar .announcements{
-    grid-row: 2 / 3;
+.job-board-sidebar .announcements,
+.job-board-sidebar .trending{
     border-top-color: #365314;
     border-top-width: 10px;
     border-top-style: solid;
@@ -223,6 +247,29 @@ ul li svg{
     justify-content: flex-start;
 }
 
+.job-board-sidebar .announcements{
+    grid-row: 2 / 3;
+}
+
+.trending-title{
+    grid-row: 3 / 4;
+}
+
+.trending{
+    grid-row: 4 / 5;
+}
+
+.trending-item{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.trending-item img{
+    width: 40px;
+}
+
 .content h2{
     margin-top: 10px;
     margin-left: 10px;
@@ -230,6 +277,5 @@ ul li svg{
 
 .footer{
     grid-column: 2 / 3;
-    grid-row: -2 / -1;
+    grid-row: 5/ 6;
 }
-
