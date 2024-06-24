@@ -89,7 +89,6 @@ ul li svg{
     background-color: #f7fee7;
     display: flex;
     justify-content: space-between;
-    height: min(100px);
 }
 
 
@@ -191,7 +190,7 @@ ul li svg{
 }
 
 .title{
-    padding: 30px 0px 5px 0px;
+    margin: 30px 0px 5px 0px;
     font-weight: bold;
     color: #365314;
 }
@@ -228,6 +227,7 @@ ul li svg{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 75px 1fr 75px 1fr;
+    gap: 15px;
 }
 
 .job-board-sidebar .announcements-title{
@@ -245,6 +245,7 @@ ul li svg{
     padding: 10px;
     background-color: #f7fee7;
     justify-content: flex-start;
+    margin-right: 10px;
 }
 
 .job-board-sidebar .announcements{
@@ -278,4 +279,9 @@ ul li svg{
 .footer{
     grid-column: 2 / 3;
     grid-row: 5/ 6;
+    display: flex;
+    justify-content: baseline;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
 }
